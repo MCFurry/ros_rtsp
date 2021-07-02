@@ -6,7 +6,13 @@ RUN apt update -qq && \
                     libgstreamer-plugins-base1.0-dev \
                     libgstreamer-plugins-good1.0-dev \
                     libgstreamer-plugins-bad1.0-dev \
-                    libgstrtspserver-1.0-dev
+                    libgstrtspserver-1.0-dev \
+                    libx264-dev \
+                    libgstreamer1.0-0 \
+                    gstreamer1.0-plugins-base \
+                    gstreamer1.0-plugins-good \
+                    gstreamer1.0-plugins-bad \
+                    gstreamer1.0-plugins-ugly
 
 RUN git clone https://github.com/MCFurry/ros_rtsp.git src/ros_rtsp
 
