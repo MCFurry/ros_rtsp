@@ -13,11 +13,8 @@ RUN git clone https://github.com/MCFurry/ros_rtsp.git src/ros_rtsp
 # Install dependencies used by packages
 RUN rosdep update && rosdep install -y -i --from-paths src
 
-# Replace configuration file
-COPY stream_setup.yaml src/ros_rtsp/config/stream_setup.yaml
-
 # Compile ROS package
 RUN bash -c 'source /opt/ros/melodic/setup.bash && catkin build'
 
 # RUN command
-CMD bash -c 'source /devel/setup.bash && roslaunch rtsp_streams.launch'
+CMD bash -c 'source /devel/setup.bash && roslaunch ros_rtsp rtsp_streams.launch'
